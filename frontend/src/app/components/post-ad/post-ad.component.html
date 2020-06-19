@@ -1,0 +1,76 @@
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+  <div class="dashboard-box">
+    <h2 class="dashbord-title">Ad Detail</h2>
+  </div>
+  <div class="dashboard-wrapper">
+    <form [formGroup]="productForm">
+      <!-- form validation starts here-->
+      <!-- category starts here-->
+      <div class="form-group mb-3 tg-inputwithicon">
+        <label class="control-label">Categories</label>
+        <div class="tg-select form-control">
+          <select formControlName="category">
+            <option value="">Select Categories</option>
+            <option value="Mobiles">Mobiles</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Training">Training</option>
+            <option value="Real Estate">Real Estate</option>
+            <option value="Services">Services</option>
+            <option value="Training">Training</option>
+            <option value="Vehicles">Vehicles</option>
+          </select>
+        </div>
+      </div>
+      <div *ngIf="isError('category')" class="alert alert-danger">
+        Category is required.
+      </div>
+      <!-- category ends here-->
+      <div class="form-group mb-3">
+        <label class="control-label">Product Name</label>
+        <input class="form-control input-md" name="Title" placeholder="Title" type="text" formControlName="product_name"
+          required />
+      </div>
+      <div *ngIf="isError('product_name')" class="alert alert-danger">
+        Product Name is required.
+      </div>
+      <div class="form-group mb-3">
+        <label class="control-label">Price</label>
+        <input class="form-control input-md" name="price" placeholder="Ad your Price" type="text"
+          formControlName="price" required />
+      </div>
+      <div *ngIf="isError('price')" class="alert alert-danger">
+        Price is required.
+      </div>
+
+      <label class="control-label">Upload Product Images</label>
+      <p-fileUpload name="demo[]" customUpload="true" (uploadHandler)="onUpload($event)" (onUpload)="onUpload($event)"
+        multiple="multiple" accept="image/*" maxFileSize="1000000">
+        <ng-template pTemplate="content">
+          <ul *ngIf="uploadedFiles.length">
+            <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
+          </ul>
+        </ng-template>
+      </p-fileUpload>
+
+      <div class="form-group md-3">
+        <section id="editor">
+          <label class="control-label">Description</label><br />
+          <textarea rows="10" formControlName="description" required>
+            </textarea>
+        </section>
+      </div>
+      <div *ngIf="isError('description')" class="alert alert-danger">
+        Description is required.
+      </div>
+      <br>
+
+      <button *ngIf="!updateProduct" (click)="addProduct()" class="btn btn-common" type="button" [disabled]="submitted">
+        Post Ad
+      </button>
+      <button *ngIf="updateProduct" (click)="editProduct()" class="btn btn-common" type="button" [disabled]="submitted">
+        Update
+      </button>
+    </form>
+    <!-- form validation ends here-->
+  </div>
+</div>

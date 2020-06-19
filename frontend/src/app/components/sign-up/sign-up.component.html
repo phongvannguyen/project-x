@@ -1,0 +1,77 @@
+<div class="page-header" style="background: url(assets/img/banner1.jpg);">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="breadcrumb-wrapper">
+          <h2 class="product-title">Join Us</h2>
+          <ol class="breadcrumb">
+            <li><a href="#">Home /</a></li>
+            <li class="current">Register</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="register section-padding">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-5 col-md-12 col-xs-12">
+        <div class="register-form login-area">
+          <h3>
+            Register
+          </h3>
+          <form [formGroup]="signUpForm" class="login-form">
+            <div class="form-group">
+              <div class="input-icon">
+                <i class="lni-user"></i>
+                <input type="text" id="Name" class="form-control" formControlName="name" name="name"
+                  placeholder="Username">
+              </div>
+              <app-form-error [errorLabel]="'Name'" [isSubmit]="submitted" [control]="signUpForm.controls['name']">
+              </app-form-error>
+            </div>
+            <div class="form-group">
+              <div class="input-icon">
+                <i class="lni-envelope"></i>
+                <input type="text" id="sender-email" class="form-control" formControlName="email" name="email"
+                  placeholder="Email Address">
+              </div>
+              <app-form-error [errorLabel]="'Email'" [isSubmit]="submitted" [control]="signUpForm.controls['email']">
+              </app-form-error>
+            </div>
+            <div class="form-group">
+              <div class="input-icon">
+                <i class="lni-lock"></i>
+                <input type="password" class="form-control" formControlName="password" placeholder="Password">
+              </div>
+              <app-form-error [errorLabel]="'Password'" [isSubmit]="submitted"
+                [control]="signUpForm.controls['password']"></app-form-error>
+
+            </div>
+            <div class="form-group">
+              <div class="input-icon">
+                <i class="lni-lock"></i>
+                <input type="password" class="form-control" formControlName="repeat_password"
+                  placeholder="Retype Password">
+              </div>
+              <app-form-error [errorLabel]="'Retype Password'" [isSubmit]="submitted"
+                [control]="signUpForm.controls['repeat_password']"></app-form-error>
+
+            </div>
+            <div class="form-group mb-3">
+              <div class="checkbox">
+                <input type="checkbox" formControlName="finePrint" name="rememberme" value="rememberme">
+                <label>By registering, you accept our Terms & Conditions</label>
+              </div>
+            </div>
+            <div class="text-center">
+              <button type="submit" (click)="register()" class="btn btn-common log-btn">Register</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

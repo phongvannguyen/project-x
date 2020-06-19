@@ -1,0 +1,210 @@
+<!-- Ads Details Start -->
+<div *ngIf="product" class="section-padding">
+  <div class="container">
+    <!-- Product Info Start -->
+    <div class="product-info row">
+      <div class="col-lg-7 col-md-12 col-xs-12">
+        <div class="details-box ads-details-wrapper">
+          <owl-carousel-o [options]="customOptions">
+            <ng-container *ngFor="let image of product.images">
+              <ng-template carouselSlide>
+                <div class="item">
+                  <div class="product-img">
+                    <img [src]="getImageUrl(image)" alt="" title="project-X">
+                  </div>
+                  <span class="price">${{ product.price }}</span>
+                </div>
+              </ng-template>
+            </ng-container>
+          </owl-carousel-o>
+
+          <!-- <div id="owl-demo" class="owl-carousel owl-theme">
+            <div *ngFor="let image of product.images">
+              <div class="item">
+                <div class="product-img">
+                  <img class="img-fluid" [attr.src]="getImageUrl(image)" alt="" />
+                </div>
+                <span class="price">${{ product.price }}</span>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+      <div class="col-lg-5 col-md-12 col-xs-12">
+        <div class="details-box">
+          <div class="ads-details-info">
+            <h2>{{ product.productName }}</h2>
+            <p class="mb-2">
+              {{ product.description }}
+            </p>
+            <div class="details-meta">
+              <span><a href="#"><i class="lni-alarm-clock"></i> 7 Jan, 10:10 pm</a></span>
+              <span><a href="#"><i class="lni-map-marker"></i> New York</a></span>
+              <span><a href="#"><i class="lni-eye"></i> 299 View</a></span>
+            </div>
+          </div>
+          <ul class="advertisement mb-4">
+            <li>
+              <p>
+                <strong><i class="lni-folder"></i> Categories: </strong>
+                <a href="#">{{ product.category }}</a>
+              </p>
+            </li>
+            <li>
+              <p>
+                <strong><i class="lni-archive"></i> Condition: </strong> New
+              </p>
+            </li>
+            <li>
+              <p>
+                <strong><i class="lni-package"></i> Brand: </strong>
+                <a href="#">Apple</a>
+              </p>
+            </li>
+          </ul>
+          <div class="ads-btn mb-4">
+            <a href="#" class="btn btn-common btn-reply"><i class="lni-envelope"></i> Email</a>
+            <a href="#" class="btn btn-common"><i class="lni-phone-handset"></i> 01154256643</a>
+          </div>
+          <div class="share">
+            <span>Share: </span>
+            <div class="social-link">
+              <a class="facebook" href="#"><i class="lni-facebook-filled"></i></a>
+              <a class="twitter" href="#"><i class="lni-twitter-filled"></i></a>
+              <a class="linkedin" href="#"><i class="lni-linkedin-fill"></i></a>
+              <a class="google" href="#"><i class="lni-google-plus"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Product Info End -->
+  </div>
+</div>
+<!-- Ads Details End -->
+
+<!-- Featured Listings Start -->
+<section class="featured-lis section-padding">
+  <div class="container">
+    <h3 class="section-title">This should be related products</h3>
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-xs-12">
+        <div class="product-item">
+          <div class="carousel-thumb">
+            <img class="img-fluid" src="assets/img/product/img1.jpg" alt="" />
+            <div class="overlay"></div>
+            <div class="btn-product bg-yellow">
+              <a href="#">New</a>
+            </div>
+          </div>
+          <div class="product-content">
+            <h3 class="product-title">
+              <a href="ads-details.html">Apple Macbook Pro</a>
+            </h3>
+            <p>Lorem ipsum dolor sit</p>
+            <span class="price">$ 89.00</span>
+            <div class="meta">
+              <span class="icon-wrap">
+                <i class="lni-star-filled"></i>
+                <i class="lni-star-filled"></i>
+                <i class="lni-star-filled"></i>
+                <i class="lni-star"></i>
+                <i class="lni-star"></i>
+              </span>
+              <span class="count-review"> <span>1</span> Reviews </span>
+            </div>
+            <div class="card-text">
+              <div class="float-left">
+                <a href="#"><i class="lni-map-marker"></i> East 7th stree 98</a>
+              </div>
+              <div class="float-right">
+                <div class="icon">
+                  <i class="lni-heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-xs-12">
+        <div class="product-item">
+          <div class="carousel-thumb">
+            <img class="img-fluid" src="assets/img/product/img2.jpg" alt="" />
+            <div class="overlay"></div>
+          </div>
+          <div class="product-content">
+            <h3 class="product-title">
+              <a href="ads-details.html">Nikon D70 Camerar</a>
+            </h3>
+            <p>Lorem ipsum dolor sit</p>
+            <span class="price">$ 79.00</span>
+            <div class="meta">
+              <span class="icon-wrap">
+                <i class="lni-star-filled"></i>
+                <i class="lni-star-filled"></i>
+                <i class="lni-star-filled"></i>
+                <i class="lni-star"></i>
+                <i class="lni-star"></i>
+              </span>
+              <span class="count-review"> <span>1</span> Reviews </span>
+            </div>
+            <div class="card-text">
+              <div class="float-left">
+                <a href="#"><i class="lni-map-marker"></i> Drive Street, US</a>
+              </div>
+              <div class="float-right">
+                <div class="icon">
+                  <i class="lni-heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-xs-12">
+        <div class="product-item">
+          <div class="carousel-thumb">
+            <img class="img-fluid" src="assets/img/product/img3.jpg" alt="" />
+            <div class="overlay"></div>
+            <div class="btn-product bg-red">
+              <a href="#">Discount 50%</a>
+            </div>
+          </div>
+          <div class="product-content">
+            <h3 class="product-title">
+              <a href="ads-details.html">Iphone X</a>
+            </h3>
+            <p>Lorem ipsum dolor sit</p>
+            <span class="price">$ 30.00</span>
+            <div class="meta">
+              <span class="icon-wrap">
+                <i class="lni-star-filled"></i>
+                <i class="lni-star-filled"></i>
+                <i class="lni-star-filled"></i>
+                <i class="lni-star"></i>
+                <i class="lni-star"></i>
+              </span>
+              <span class="count-review"> <span>1</span> Reviews </span>
+            </div>
+            <div class="card-text">
+              <div class="float-left">
+                <a href="#"><i class="lni-map-marker"></i> Louis, Missouri, US</a>
+              </div>
+              <div class="float-right">
+                <div class="icon">
+                  <i class="lni-heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Featured Listings End -->
+
+<!-- Go to Top Link -->
+<a href="#" class="back-to-top">
+  <i class="lni-chevron-up"></i>
+</a>
